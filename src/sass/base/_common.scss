@@ -1,0 +1,165 @@
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  color: $primary-text-color;
+
+  background-color: $primary-bg-color;
+  background-image: url('../images/background/noise-body-mobile@1x.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include mq(retina) {
+    background-image: url('../images/background/noise-body-mobile@2x.png');
+  }
+
+  @include mq(tab) {
+    background-image: url('../images/background/background-figures_tab.png'),
+      url('../images/background/noise-body-tablet@1x.png');
+
+    @include mq(retina) {
+      background-image: url('../images/background/background-figures_tab@2x.png'),
+        url('../images/background/noise-body-tablet@2x.png');
+    }
+  }
+
+  @include mq(desk) {
+    background-image: url('../images/background/background-figures_desk.png'),
+      url('../images/background/noise-body-desktop@1x.png');
+
+    @include mq(retina) {
+      background-image: url('../images/background/background-figures_desk@2x.png'),
+        url('../images/background/noise-body-desktop@2x.png');
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    display: block;
+    width: 320px;
+    height: 364px;
+
+    background-image: linear-gradient(
+        rgba(11, 11, 11, 0.5),
+        rgba(11, 11, 11, 0.5)
+      ),
+      url('../images/background/background-img_mob.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include mq(retina) {
+      background-image: linear-gradient(
+          rgba(11, 11, 11, 0.5),
+          rgba(11, 11, 11, 0.5)
+        ),
+        url('../images/background/background-img_mob@2x.jpg');
+    }
+
+    // @include mq(mob-only) {
+    //   width: 100%;
+    // }
+
+    @include mq(tab) {
+      width: 768px;
+
+      background-image: linear-gradient(
+          rgba(11, 11, 11, 0.5),
+          rgba(11, 11, 11, 0.5)
+        ),
+        url('../images/background/background-img_tab.jpg');
+
+      @include mq(retina) {
+        background-image: linear-gradient(
+            rgba(11, 11, 11, 0.5),
+            rgba(11, 11, 11, 0.5)
+          ),
+          url('../images/background/background-img_tab@2x.jpg');
+      }
+    }
+
+    @include mq(desk) {
+      width: 1280px;
+      height: 446px;
+
+      background-image: linear-gradient(
+          rgba(11, 11, 11, 0.5),
+          rgba(11, 11, 11, 0.5)
+        ),
+        url('../images/background/background-img_desk.jpg');
+
+      @include mq(retina) {
+        background-image: linear-gradient(
+            rgba(11, 11, 11, 0.5),
+            rgba(11, 11, 11, 0.5)
+          ),
+          url('../images/background/background-img_desk@2x.jpg');
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -9;
+    top: 262px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 100%;
+    height: 102px;
+
+    background-image: linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0) 0%,
+      rgba(14, 14, 14, 0.8) 100%
+    );
+
+    @include mq(tab) {
+      background-image: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      );
+    }
+
+    @include mq(desk) {
+      top: 344px;
+
+      background-image: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0.19) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      );
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  overflow: hidden;
+
+  @media screen and(min-width: 768px) {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and(min-width: 1280px) {
+    max-width: 1280px;
+    padding: 0 16px;
+  }
+}

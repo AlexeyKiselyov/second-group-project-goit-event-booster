@@ -1,0 +1,92 @@
+.heart {
+  content: '\2764';
+  color: red;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  @include mq(mob-only) {
+    flex-wrap: wrap;
+  }
+  @include mq(tab) {
+    width: 100%;
+    padding: 30px 0 30px 0;
+  }
+}
+
+.footer__text {
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+
+  color: $primary-text-color;
+  width: 252px;
+  @include mq(tab) {
+    width: 384px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.footer__box {
+  position: relative;
+  margin-left: 5px;
+
+  place-items: center;
+  overflow: hidden;
+
+  @include mq(mob-only) {
+    margin-top: 10px;
+  }
+  @include mq(tab) {
+    margin-top: 0px;
+  }
+}
+
+.footer__box::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 170px;
+  left: 60px;
+  top: -64;
+  background: linear-gradient($second-color, $accent-color);
+  animation: animate 5s linear infinite;
+}
+.footer__box::after {
+  content: '';
+  position: absolute;
+  background: $primary-bg-color;
+  inset: 2px;
+  border-radius: 5px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.footer__btn {
+  position: relative;
+  z-index: 1;
+  width: 160px;
+  height: 40px;
+
+  background: none;
+  color: var(--modal-bg-color);
+  border: none;
+  cursor: pointer;
+
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    transform: scale(1.1);
+  }
+}
